@@ -24,11 +24,19 @@ public class Message {
         this.messageNumber = messageNumber;
         this.recipient = recipient;
         this.messageText = messageText;
-        this.messageId = createTenDigitId();
+        this.messageId = reateTenDigitId();
         this.messageHash = createMessageHash();
     }
     
-    public boolean checkMessageID() { return messageID.length() <= 10; }
+    private String createTenDigitId(){
+       StringBuilder digits = new StringBuilder();
+       while (digits.length()< 10)
+           digits.append(UUID.randomUUID().toString().replaceAll("[^0-9]",""));
+       return digits.substring(0, 10);
+    }
+    public boolean checkMessageID() { 
+        return messageID.length() <= 10; 
+    }
     
     public String checkRecipientCell() {
         if (recipient.matches("^\\+[1-9][0-9]{7,12}$")) {
