@@ -31,8 +31,14 @@ public class Message {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public Message(int messageNumber, String recipient, String messageText) {
+        this.messageID = Long.toString(ThreadLocalRandom.current()
+                .nextLong(1_000_000_000L, 10_000_000_000L));
+        this.messageNumber = messageNumber;
+        this.recipient = recipient == null ? "" : recipient.trim();
+        this.messageText = messageText == null ? "" : messageText.trim();
+        this.messageHash = createMessageHash();
     }
+    
     
 }
