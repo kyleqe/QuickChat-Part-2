@@ -83,4 +83,14 @@ public class Message {
          return 1; 
      }
      
+      public String toJson() {
+        return "{\"messageId\":\"" + esc(messageId)
+            + "\",\"messageHash\":\"" + esc(messageHash)
+            + "\",\"recipient\":\"" + esc(recipient)
+            + "\",\"message\":\"" + esc(messageText) 
+            + "\"}";
+    }
+     
+      
+     
 }
