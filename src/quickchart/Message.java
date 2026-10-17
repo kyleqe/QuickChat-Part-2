@@ -24,7 +24,7 @@ public class Message {
         this.messageNumber = messageNumber;
         this.recipient = recipient;
         this.messageText = messageText;
-        this.messageId = reateTenDigitId();
+        this.messageId = createTenDigitId();
         this.messageHash = createMessageHash();
     }
     
@@ -56,5 +56,16 @@ public class Message {
                 + (messageText.length() - 250) + "; please reduce the size."; 
     }
     
-    
+     public String createMessageHash() { 
+        String[] words = messageText.trim().split("\\s+"); 
+        String firstWord = cleanWord(words[0]); 
+        String lastWord = cleanWord(words[words.length - 1]); 
+        return messageId.substring(0, 2) + ":" + messageNumber + ":" 
+                + (firstWord + lastWord).toUpperCase(); 
+    } 
+
+    private String cleanWord(String word) {
+        return word.replaceAll("[^A-Za-z0-9]", ""); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+     
 }
