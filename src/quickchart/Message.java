@@ -67,5 +67,9 @@ public class Message {
     private String cleanWord(String word) {
         return word.replaceAll("[^A-Za-z0-9]", ""); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+     public String SentMessage() { 
+         return "Choose Send Message, Disregard Message, or Store Message."; 
+     }
      
 }
