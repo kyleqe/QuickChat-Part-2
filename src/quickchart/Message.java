@@ -4,15 +4,7 @@
  */
 package quickchart;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.UUID;
 /**
  *
  * @author Kylen
@@ -41,6 +33,14 @@ public class Message {
     }
     
     public boolean checkMessageID() { return messageID.length() <= 10; }
+    
+    public String checkRecipientCell() {
+        if (recipient.matches("^\\+[1-9][0-9]{7,12}$")) {
+            return "Cell phone number successfully captured.";
+        }
+        return "Cell phone number incorrectly formatted or does not contain an international code.";
+    }
+
     
     
 }
