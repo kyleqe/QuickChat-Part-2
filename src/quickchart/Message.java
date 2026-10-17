@@ -35,7 +35,7 @@ public class Message {
        return digits.substring(0, 10);
     }
     public boolean checkMessageID() { 
-        return messageID.length() <= 10; 
+        return messageId.length() <= 10; 
     }
     
     public String checkRecipientCell() {
