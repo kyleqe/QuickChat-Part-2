@@ -45,6 +45,16 @@ public class Message {
         return "Cell phone number incorrectly formatted or does not contain an international code.";
     }
 
+     public String checkMessageLength() { 
+        if (messageText == null) { 
+            return "Please enter a message."; 
+        } 
+        if (messageText.length() <= 250) { 
+            return "Message ready to send."; 
+        } 
+        return "Message exceeds 250 characters by " 
+                + (messageText.length() - 250) + "; please reduce the size."; 
+    }
     
     
 }
