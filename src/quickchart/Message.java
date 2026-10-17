@@ -91,6 +91,15 @@ public class Message {
             + "\"}";
     }
      
+       private String esc(String s) {
+        if (s == null) 
+            return "";
+        return s.replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+                .replace("\n", "\\n")
+                .replace("\r", "\\r")
+                .replace("\t", "\\t");
+    }
       
      
 }
