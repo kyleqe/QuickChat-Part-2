@@ -11,14 +11,11 @@ import java.util.UUID;
  */
 public class Message {
     
-    private final String messageID;
-    private final int messageNumber;
-    private final String recipient;
-    private final String messageText;
-    private final String messageHash;
-    private String status = "Pending";
-    private static int totalMessagesSent = 0;
-    private static final List<Message> sentMessages = new ArrayList<>();
+   private final String messageId;
+   private final int messageNumber;
+   private final String recipient;
+   private final String messageText;
+   private final String messageHash;
 
     /**
      * @param args the command line arguments
