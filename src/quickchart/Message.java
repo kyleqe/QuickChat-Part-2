@@ -100,6 +100,10 @@ public class Message {
                 .replace("\r", "\\r")
                 .replace("\t", "\\t");
     }
-      
-     
+       
+    public String getMessageId(){return messageId;}
+    public String getMessageHash(){return messageHash;}
+    public String getRecipient(){return recipient;}
+    public String getMessageText(){return messageText;}
+           
 }
