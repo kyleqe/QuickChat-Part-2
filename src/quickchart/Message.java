@@ -72,4 +72,10 @@ public class Message {
          return "Choose Send Message, Disregard Message, or Store Message."; 
      }
      
+     public String printMessages() {
+        return "Message ID: "+messageId
+                +"\nMessage Hash: "+messageHash
+                +"\nRecipient: "+recipient
+                +"\nMessage: "+messageText;
+    }
 }
