@@ -21,11 +21,10 @@ public class Message {
      * @param args the command line arguments
      */
     public Message(int messageNumber, String recipient, String messageText) {
-        this.messageID = Long.toString(ThreadLocalRandom.current()
-                .nextLong(1_000_000_000L, 10_000_000_000L));
         this.messageNumber = messageNumber;
-        this.recipient = recipient == null ? "" : recipient.trim();
-        this.messageText = messageText == null ? "" : messageText.trim();
+        this.recipient = recipient;
+        this.messageText = messageText;
+        this.messageId = createTenDigitId();
         this.messageHash = createMessageHash();
     }
     
