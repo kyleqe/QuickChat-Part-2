@@ -78,4 +78,9 @@ public class Message {
                 +"\nRecipient: "+recipient
                 +"\nMessage: "+messageText;
     }
+     
+     public int returnTotalMessagess() { 
+         return 1; 
+     }
+     
 }
