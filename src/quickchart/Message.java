@@ -40,5 +40,7 @@ public class Message {
         this.messageHash = createMessageHash();
     }
     
+    public boolean checkMessageID() { return messageID.length() <= 10; }
+    
     
 }
