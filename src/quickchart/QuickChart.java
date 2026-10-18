@@ -15,5 +15,8 @@ import java.util.Scanner;
  * @author Kylen
  */
 public class QuickChart {
-    
+    private static final List<Message> SENT_MESSAGES = new ArrayList<>();
+    private static int sentCount = 0;
+    private static int processedCount = 0;
+
 }
