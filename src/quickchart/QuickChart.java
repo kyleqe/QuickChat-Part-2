@@ -57,6 +57,22 @@ public class QuickChart {
             System.out.println("You have reached the message limit you selected.");
             return;
         }
+        while (processedCount < limit) {
+            int number = processedCount;
+            System.out.println("\n--- Message " + (number + 1) + " of " + limit + " ---");
+            System.out.print("Enter recipient in international format (example +27718693002): ");
+            String recipient = input.nextLine().trim();
+            Message check = new Message(number, recipient, "placeholder");
+            if (!check.checkRecipientCell().startsWith("Cell phone number successfully")) {
+                System.out.println(check.checkRecipientCell());
+                continue;
+            }
+            System.out.print("Enter your message (maximum 250 characters): ");
+            Message message = new Message(number, recipient, input.nextLine());
+            String status = message.checkMessageLength();
+            System.out.println(status);
+            if (!status.equals("Message ready to send.")) continue;
+        }    
     }
 
 
