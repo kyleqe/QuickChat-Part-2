@@ -73,7 +73,36 @@ public class QuickChart {
             System.out.println(status);
             if (!status.equals("Message ready to send.")) continue;
         }    
-    }
+        System.out.println("1) Send Message\n2) Disregard Message\n3) Store Message to send later");
+            System.out.print("Your choice: ");
+            String choice = input.nextLine().trim();
+            if (choice.equals("1")) {
+                SENT_MESSAGES.add(message);
+                sentCount++;
+                processedCount++;
+                System.out.println("Message successfully sent.");
+                System.out.println(message.printMessages());
+            } else if (choice.equals("2")) {
+                System.out.print("Enter 0 to confirm disregard: ");
+                if (input.nextLine().trim().equals("0")) {
+                    System.out.println("Message disregarded.");
+                    processedCount++;
+                } else {
+                    System.out.println("Disregard cancelled; message not processed.");
+                }
+            } else if (choice.equals("3")) {
+                try {
+                    storeMessage(message);
+                    System.out.println("Message successfully stored.");
+                    processedCount++;
+                } catch (IOException e) {
+                    System.out.println("Could not store message: " + e.getMessage());
+                }
+            } else {
+                System.out.println("Invalid choice. Message was not processed.");
+            }
+        }
+    
 
 
 }
